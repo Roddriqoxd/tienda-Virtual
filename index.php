@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="bg-dark">
+<div class="bg-dark">
     <nav id="navar" class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <!-- <a class="navbar-brand" type="button" href="#">Inicio</a> -->
@@ -29,7 +29,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav " >
-                        <a href="#nuestro" class="nav-link text-info" category="all" >TOJI ONLINE STORE</a>
+                    <a href="index.php" class="nav-link" style="color: white;">TOJI ONLINE STORE</a>
+                        <a href="#nuestro" class="nav-link" category="all" >Todos los productos</a>
                         <?php
                         $query = mysqli_query($conexion, "SELECT * FROM categorias");
                         while ($data = mysqli_fetch_assoc($query)) { ?>
@@ -40,7 +41,7 @@
             </div>
         </nav>
     </div>
-    <a href="#" class="btn-flotante" id="btnCarrito">Carrito <span class="badge bg-success" id="carrito">0</span></a>
+    <!-- <a href="#" class="btn-flotante" id="btnCarrito">Carrito <span class="badge bg-success" id="carrito">0</span></a> -->
     <!-- Navigation-->
 <!-- carusel-->
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -69,39 +70,6 @@
 <!--  -->
 <div id="nuestro" class="text-center" style="color: black; font-family: Lucida Console;" > <br><h2>Nuestros productos</h2><br></div>
 <!--  -->
-
-<!-- registro -->
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">LOGIN</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-<div>
-<label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-
-</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- registro  fin -->
     <!-- Header-->
     <section class=" my-3 py-3">
         <div class="container px-4 px-lg-3">
@@ -112,33 +80,24 @@
                 if ($result > 0) {
                     while ($data = mysqli_fetch_assoc($query)) { ?>
                         <div class="col mb-5 productos mx-5" category="<?php echo $data['categoria']; ?>">
-                            <div class="card h-100" style="width: 18rem;">
+                            <div class=" h-100" style="width: 16rem;">
                                 <!-- Sale badge-->
-                                <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem"><?php echo ($data['precio_normal'] > $data['precio_rebajado']) ? 'Oferta' : ''; ?></div>
+                                
                                 <!-- Product image-->
-                                <img class="card-img-top" src="assets/img/<?php echo $data['imagen']; ?>" alt="..." />
+                                <form class="text-center" method="post" action="mostar.php?accion=mostrar&id=<?php echo $data['id']; ?>">
+                                <button class="btn"><img class="card-img-top" src="assets/img/<?php echo $data['imagen']; ?>" alt="..." /></button>
+                                </form> 
+                                
                                 <!-- Product details-->
                                 <div class="card-body p-4">
                                     <div class="text-center">
-                                        <!-- Product name-->
-                                        <h5 class="fw-bolder"><?php echo $data['nombre'] ?></h5>
-                                        <!-- <p><?php echo $data['descripcion']; ?></p> -->
+                                    <h5 class="fw-bolder"><?php echo $data['nombre'] ?></h5>                                     
+                                        <div class="badge bg-danger text-white" style="top: 0.5rem; right: 0.5rem"><?php echo ($data['precio_normal'] > $data['precio_rebajado']) ? 'Oferta' : ''; ?></div>
                                         <!-- Product reviews-->
-                                        <div class="d-flex justify-content-center small text-warning mb-2">
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                        </div>
                                         <!-- Product price-->
-                                        <span class="text-muted text-decoration-line-through"><?php echo $data['precio_normal'] ?></span>
-                                        <?php echo $data['precio_rebajado'] ?>
+                                        <span class="text-muted text-decoration-line-through"><?php echo $data['precio_normal'] ?>Bs</span>
+                                        <?php echo $data['precio_rebajado'] ?>Bs
                                     </div>
-                                </div>
-                                <!-- Product actions-->
-                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar" data-id="<?php echo $data['id']; ?>" href="#">Agregar</a></div>
                                 </div>
                             </div>
                         </div>
