@@ -56,7 +56,10 @@ if (isset($_GET)) {
     <div class="col 6">
     <label for="basic-url" class="form-label">Producto</label>
     <input  class="form-control" id="floatingInputValue" name="producto" placeholder="" value="<?php echo $data['nombre'] ?>">
-    </div>
+                    
+    hidden
+                    imput disactivado
+</div>
 
     <div class="col 6">
     <label for="basic-url" class="form-label">#CodigoProducto</label>
@@ -71,7 +74,7 @@ if (isset($_GET)) {
 <input  class="form-control" id="floatingInputValue" name="color" placeholder="Solo si hay colores disponibles">
 </div>
 <div class="col-6" style="   display: flex; align-items: center; justify-content: center;">
-  <img id="imgen" class="d-block w-50" src="assets/img/<?php echo $data['imagen4']; ?>" />
+  <img id="imgen" class="d-block w-50" src="assets/img/<?php echo $data['imagen']; ?>" />
 </div>
 </div>
 <div class="mb-3">
@@ -80,11 +83,11 @@ if (isset($_GET)) {
 </div>
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">WhatsApp / telefono</label>
-  <input  class="form-control" neme="telefono" id="exampleFormControlInput1" placeholder="">
+  <input  class="form-control" name="telefono" id="exampleFormControlInput1" placeholder="">
 </div>
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Direccion</label>
-  <textarea class="form-control" name="mensaje" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <textarea class="form-control" name="direccion" id="exampleFormControlTextarea1" rows="3"></textarea>
 </div>
 <div class="col-auto">
     <button type="submit" class="btn btn-primary mb-3">Enviar</button>

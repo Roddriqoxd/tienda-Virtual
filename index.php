@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 <body>
-<div class="bg-dark">
-    <nav id="navar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div >
+    <nav id="navar" class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <!-- <a class="navbar-brand" type="button" href="#">Inicio</a> -->
                 <img src="assets/img/logo.png" alt="" width="30" height="30">
@@ -29,25 +29,81 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav " >
-                    <a href="index.php" class="nav-link" style="color: white;">TOJI ONLINE STORE</a>
+                    <a href="index.php" class="nav-link" style="color: light;">TOJI ONLINE STORE</a>
                         <a href="#nuestro" class="nav-link" category="all" >Todos los productos</a>
                         <?php
                         $query = mysqli_query($conexion, "SELECT * FROM categorias");
                         while ($data = mysqli_fetch_assoc($query)) { ?>
                             <a href="#nuestro" class="nav-link" category="<?php echo $data['categoria']; ?>"><?php echo $data['categoria']; ?></a>
                         <?php } ?>
-                    </ul>
+                    </ul>                    <div style="position: absolute; right:50px;">
+                    <a class="btn btn-success" href="https://api.whatsapp.com/send/?phone=59162606558&" role="button" >WhatsApp</a>
+                    </div>
+                            
                 </div>
             </div>
         </nav>
+        <hr style="text-align: right; margin-right: 0px; margin: 0px;">
+
     </div>
+
     <!-- <a href="#" class="btn-flotante" id="btnCarrito">Carrito <span class="badge bg-success" id="carrito">0</span></a> -->
     <!-- Navigation-->
 <!-- carusel-->
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div>
+    <!--  -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+    <img src="assets/img/p1.jpg" class="d-block w-100" alt="..." height=""> 
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Descubre todos nuestros productos</h5>
+        <p>Un cliente satisfecho es la mejor estrategia para no</p>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+    <img src="assets/img/p2.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Productos en oferta</h5>
+        <p>Todo lo que buscas al mejor precio</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+    <img src="assets/img/prueba4.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    <!--  -->
+<!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false"><div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
 <div class="carousel-inner">
     <div class="carousel-item active">
     <img src="assets/img/p1.jpg" class="d-block w-100" alt="..." height="">  
+    <div class="carousel-caption d-none d-md-block">
+        <h5 color:>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
     </div>
     <div class="carousel-item">
     <img src="assets/img/prueba3.jpg" class="d-block w-100" alt="..." height="535">
@@ -65,7 +121,9 @@
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
-    </button>
+    </button> -->
+</div>
+<hr style="text-align: right; margin-right: 0px; margin: 0px;">
 </div>
 <!--  -->
 <div id="nuestro" class="text-center" style="color: black; font-family: Lucida Console;" > <br><h2>Nuestros productos</h2><br></div>

@@ -66,7 +66,12 @@ if (empty($_SESSION['id'])) {
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="solicitudes.php">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Solicitudes</span></a>
+            </li>
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>

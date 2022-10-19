@@ -63,12 +63,13 @@ if (isset($_POST)) {
                         <th>Imagen-2</th>
                         <th>Imagen-3</th>
                         <th>Imagen-4</th>
+                        <th>Nombre producto</th>
                         <th>Descripción</th>
                         <th>Precio Normal</th>
                         <th>Precio Rebajado</th>
                         <th>Cantidad</th>
                         <th>Categoria</th>
-                        <th></th>
+                        <th>Accion</th>
                     </tr>
                 </thead>
                 <tbody>
