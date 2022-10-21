@@ -51,13 +51,12 @@ if (isset($_GET)) {
 </div>
 <div class="mb-3 row">
 <div class="col-6">
-<label for="basic-url" class="form-label">Producto</label>
+<label for="basic-url" class="form-label fw-bolder">Datos del Producto</label>
 <div class="row">
     <div class="col 6">
-    <label for="basic-url" class="form-label">Producto</label>
+    <label for="basic-url" class="form-label">Nombre del producto</label>
     <input  class="form-control" id="floatingInputValue" name="producto" placeholder="" value="<?php echo $data['nombre'] ?>">
                     
-    hidden
                     imput disactivado
 </div>
 
@@ -68,8 +67,18 @@ if (isset($_GET)) {
 </div>
 
 
-<label for="basic-url" class="form-label">Cantidad</label>
+
+<div class="row">
+    <div class="col 6">
+    <label for="basic-url" class="form-label">Cantidad</label>
 <input class="form-control" id="floatingInputValue" name="cantidad" placeholder="1-<?php echo $data['cantidad'] ?>">
+</div>
+
+    <div class="col 6">
+    <label for="basic-url" class="form-label">Precio</label>
+    <input  class="form-control" id="floatingInputValue" name="id" placeholder='<?php echo $data['precio_rebajado'] ?>' value="">
+    </div>
+</div>
 <label for="basic-url" class="form-label">Color</label>
 <input  class="form-control" id="floatingInputValue" name="color" placeholder="Solo si hay colores disponibles">
 </div>
@@ -77,6 +86,7 @@ if (isset($_GET)) {
   <img id="imgen" class="d-block w-50" src="assets/img/<?php echo $data['imagen']; ?>" />
 </div>
 </div>
+<label for="basic-url" class="form-label fw-bolder">Datos del cliente</label>
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
   <input  class="form-control" name="nombre" id="exampleFormControlInput1" placeholder="">

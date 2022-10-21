@@ -10,7 +10,6 @@ if (isset($_GET)) {
         }
     }
 ?>
-
 <!DOCTYPE html>
 <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -27,11 +26,9 @@ if (isset($_GET)) {
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 <body>
-
 <div class="bg-dark">
     <nav id="navar" class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <!-- <a class="navbar-brand" type="button" href="#">Inicio</a> -->
                 <img src="assets/img/logo.png" alt="" width="30" height="30">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -87,13 +84,16 @@ if (isset($_GET)) {
                         <span class="visually-hidden">Next</span>
                     </button>
             </div>
-
         </div>
-
         <div class="col-2">
             <h5 class="fw-bolder text-center">Precio</h5>
             <div class="container" style="background-color: #adff2f;"><h3 class="text-center"><?php echo $data['precio_rebajado'] ?>Bs</h3></div>
-            <h5 class="fw-bolder text-center">Cantidad</h5>
+            <h5 class="fw-bolder text-center"><script>x</script></h5>
+            <Script>
+                var i= 2;
+                var y = 3;
+                var x= i + y;
+            </Script>
             <h5 class="text-center"><?php echo $data['cantidad'] ?> Unidades</h5>
                             <div style="text-align: center;">
             <form method="post" action="formulario.php?accion=form&id=<?php echo $data['id']; ?>">

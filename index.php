@@ -12,8 +12,6 @@
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.png"/>
     <!-- Bootstrap icons-->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" /> -->
-    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="assets/css/styles.css" rel="stylesheet" />
     <link href="assets/css/estilos.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -22,21 +20,20 @@
 <div >
     <nav id="navar" class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <!-- <a class="navbar-brand" type="button" href="#">Inicio</a> -->
                 <img src="assets/img/logo.png" alt="" width="30" height="30">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav " >
-                    <a href="index.php" class="nav-link" style="color: light;">TOJI ONLINE STORE</a>
+                    <a href="index.php" class="nav-link" style="color: black;">TOJI ONLINE STORE</a>
                         <a href="#nuestro" class="nav-link" category="all" >Todos los productos</a>
                         <?php
                         $query = mysqli_query($conexion, "SELECT * FROM categorias");
                         while ($data = mysqli_fetch_assoc($query)) { ?>
                             <a href="#nuestro" class="nav-link" category="<?php echo $data['categoria']; ?>"><?php echo $data['categoria']; ?></a>
                         <?php } ?>
-                    </ul>                    <div style="position: absolute; right:50px;">
+                    </ul>                    <div style="position: absolute; right:80px;">
                     <a class="btn btn-success" href="https://api.whatsapp.com/send/?phone=59162606558&" role="button" >WhatsApp</a>
                     </div>
                             
@@ -47,11 +44,7 @@
 
     </div>
 
-    <!-- <a href="#" class="btn-flotante" id="btnCarrito">Carrito <span class="badge bg-success" id="carrito">0</span></a> -->
-    <!-- Navigation-->
-<!-- carusel-->
 <div>
-    <!--  -->
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -63,7 +56,7 @@
     <img src="assets/img/p1.jpg" class="d-block w-100" alt="..." height=""> 
       <div class="carousel-caption d-none d-md-block">
         <h5>Descubre todos nuestros productos</h5>
-        <p>Un cliente satisfecho es la mejor estrategia para no</p>
+        <p>Un cliente satisfecho es la mejor estrategia para nosotros</p>
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="2000">
@@ -90,43 +83,11 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-    <!--  -->
-<!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false"><div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-<div class="carousel-inner">
-    <div class="carousel-item active">
-    <img src="assets/img/p1.jpg" class="d-block w-100" alt="..." height="">  
-    <div class="carousel-caption d-none d-md-block">
-        <h5 color:>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-    <img src="assets/img/prueba3.jpg" class="d-block w-100" alt="..." height="535">
-    </div>
-    <div class="carousel-item">
-    <img src="assets/img/prueba4.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-    <img src="assets/img/p2.jpg" class="d-block w-100" alt="...">
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-    </button> -->
 </div>
 <hr style="text-align: right; margin-right: 0px; margin: 0px;">
 </div>
 <!--  -->
-<div id="nuestro" class="text-center" style="color: black; font-family: Lucida Console;" > <br><h2>Nuestros productos</h2><br></div>
+<div id="nuestro" class="fw-bolder text-center" style="color: black; " > <br><h2>Nuestros productos</h2><br></div>
 <!--  -->
     <!-- Header-->
     <section class=" my-3 py-3">
