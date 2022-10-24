@@ -39,10 +39,13 @@ include("includes/header.php");
                             <td><?php echo $data['id']; ?></td>
                             <td><?php echo $data['usuario']; ?></td>
                             <td><?php echo $data['nombre']; ?></td>
-                            <td ><?php echo $data['clave']; ?></td> 
+                            <td ><input type="password" class="form-control-plaintext" value="<?php echo $data['clave']; ?>"></td> 
                             <td>
                                 <form method="post" action="eliminar.php?accion=user&id=<?php echo $data['id']; ?>" class="d-inline eliminar">
                                     <button class="btn btn-danger" type="submit">Eliminar</button>
+                                </form>
+                                <form method="Post" action="editarUsuario.php?accion=cli&id=<?php echo $data['id']; ?>" class="d-inline">
+                                    <button class="btn btn-success" type="submit">Editar</button>
                                 </form>
                             </td>
                         </tr>
@@ -64,12 +67,12 @@ include("includes/header.php");
             <div class="modal-body">
                 <form action="" method="POST" autocomplete="off">
                     <div class="form-group">
-                        <!-- <label for="nombre">Nombre</label> -->
-                        <input  class="form-control" type="text" name="nombre" placeholder="Nombre completo" required>
-                        <br>
-                        <input  class="form-control" type="text" name="usuario" placeholder="usuario" required>
-                        <br>
-                        <input  class="form-control" type="text" name="clave" placeholder="contraseña" required>
+                        <label for="nombre">Nombre</label>
+                        <input  class="form-control" type="text" name="nombre" placeholder="" required>
+                        <label for="nombre">Cuenta</label>
+                        <input  class="form-control" type="text" name="usuario" placeholder="" required>
+                        <label for="nombre">contraseña</label>
+                        <input  class="form-control" type="text" name="clave" placeholder="" required>
                     </div>
                     <button class="btn btn-primary" type="submit">Registrar</button>
                 </form>

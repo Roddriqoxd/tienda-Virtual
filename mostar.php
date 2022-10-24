@@ -88,12 +88,7 @@ if (isset($_GET)) {
         <div class="col-2">
             <h5 class="fw-bolder text-center">Precio</h5>
             <div class="container" style="background-color: #adff2f;"><h3 class="text-center"><?php echo $data['precio_rebajado'] ?>Bs</h3></div>
-            <h5 class="fw-bolder text-center"><script>x</script></h5>
-            <Script>
-                var i= 2;
-                var y = 3;
-                var x= i + y;
-            </Script>
+            <h5 class="fw-bolder text-center">Cantidad</h5>
             <h5 class="text-center"><?php echo $data['cantidad'] ?> Unidades</h5>
                             <div style="text-align: center;">
             <form method="post" action="formulario.php?accion=form&id=<?php echo $data['id']; ?>">

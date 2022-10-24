@@ -54,29 +54,25 @@ if (isset($_GET)) {
 <label for="basic-url" class="form-label fw-bolder">Datos del Producto</label>
 <div class="row">
     <div class="col 6">
-    <label for="basic-url" class="form-label">Nombre del producto</label>
-    <input  class="form-control" id="floatingInputValue" name="producto" placeholder="" value="<?php echo $data['nombre'] ?>">
-                    
-                    imput disactivado
+    <label for="basic-url" class="form-label">Producto</label>
+    <!-- <input  class="form-control" id="floatingInputValue" name="producto" placeholder="" value="<?php echo $data['nombre'] ?>"> -->
+    <input type="text" readonly class="form-control-plaintext" name="producto" value="<?php echo $data['nombre'] ?>">
 </div>
 
     <div class="col 6">
     <label for="basic-url" class="form-label">#CodigoProducto</label>
-    <input  class="form-control" id="floatingInputValue" name="id" placeholder="" value="<?php echo $data['id'] ?>">
+    <!-- <input  class="form-control" id="floatingInputValue" name="id" placeholder="" value="<?php echo $data['id'] ?>"> -->
+    <input type="text" readonly class="form-control-plaintext" name="id" value="<?php echo $data['id'] ?>">
     </div>
 </div>
-
-
-
 <div class="row">
     <div class="col 6">
     <label for="basic-url" class="form-label">Cantidad</label>
-<input class="form-control" id="floatingInputValue" name="cantidad" placeholder="1-<?php echo $data['cantidad'] ?>">
+<input class="form-control" type="number" id="floatingInputValue" name="<?php echo $num='' ?>" value="" placeholder="1-<?php echo $data['cantidad'] ?>">
 </div>
-
     <div class="col 6">
     <label for="basic-url" class="form-label">Precio</label>
-    <input  class="form-control" id="floatingInputValue" name="id" placeholder='<?php echo $data['precio_rebajado'] ?>' value="">
+    <input  class="form-control" id="floatingInputValue" name="cantidad" placeholder='<?php echo $data['precio_rebajado'] ?>' value="">
     </div>
 </div>
 <label for="basic-url" class="form-label">Color</label>
