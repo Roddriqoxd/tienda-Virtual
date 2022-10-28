@@ -72,6 +72,12 @@ if (empty($_SESSION['id'])) {
                     <i class="fas fa-user-cog"></i>
                     <span>Solicitudes</span></a>
             </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="reportes.php">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Reportes</span></a>
+            </li>
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>

@@ -68,7 +68,7 @@ if (isset($_GET)) {
 <div class="row">
     <div class="col 6">
     <label for="basic-url" class="form-label">Cantidad</label>
-<input class="form-control" type="number" id="floatingInputValue" name="<?php echo $num='' ?>" value="" placeholder="1-<?php echo $data['cantidad'] ?>">
+<input class="form-control" type="number" id="floatingInputValue" name="cantidad" value="" placeholder="1-<?php echo $data['cantidad'] ?>">
 </div>
     <div class="col 6">
     <label for="basic-url" class="form-label">Precio</label>

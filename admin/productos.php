@@ -49,6 +49,7 @@ if (isset($_POST)) {
     }
 }
         include("includes/header.php"); ?>
+
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Productos</h1>
     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="abrirProducto"><i class="fas fa-plus fa-sm text-white-50"></i> Nuevo</a>
@@ -64,7 +65,7 @@ if (isset($_POST)) {
                         <th>Imagen-3</th>
                         <th>Imagen-4</th>
                         <th>Nombre producto</th>
-                        <th>Descripción</th>
+                        <!-- <th>Descripción</th> -->
                         <th>Precio Normal</th>
                         <th>Precio Rebajado</th>
                         <th>Cantidad</th>
@@ -82,7 +83,7 @@ if (isset($_POST)) {
                             <td><img class="img-thumbnail" src="../assets/img/<?php echo $data['imagen3']; ?>" width="50"></td>
                             <td><img class="img-thumbnail" src="../assets/img/<?php echo $data['imagen4']; ?>" width="50"></td>
                             <td><?php echo $data['nombre']; ?></td>
-                            <td><?php echo $data['descripcion']; ?></td>
+                            <!-- <td><?php echo $data['descripcion']; ?></td> -->
                             <td><?php echo $data['precio_normal']; ?></td>
                             <td><?php echo $data['precio_rebajado']; ?></td>
                             <td><?php echo $data['cantidad']; ?></td>
@@ -90,6 +91,9 @@ if (isset($_POST)) {
                             <td>
                                 <form method="post" action="eliminar.php?accion=pro&id=<?php echo $data['id']; ?>" class="d-inline eliminar">
                                     <button class="btn btn-danger" type="submit">Eliminar</button>
+                                </form>
+                                <form method="Post" action="editarProductos.php?accion=cli&id=<?php echo $data['id']; ?>" class="d-inline">
+                                    <button class="btn btn-success" type="submit">Editar</button>
                                 </form>
                             </td>
                         </tr>
