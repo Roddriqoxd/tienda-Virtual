@@ -10,6 +10,7 @@ require_once "config/conexion.php";
         // $estado =$_POST['estado'];
         $query = mysqli_query($conexion, "INSERT INTO formulario(producto, nombre, telefono, direccion,color,cantidad,id_producto,estado) VALUES ('$producto','$nombre','$telefono','$direccion','$color','$cantidad',$id,'1')");
         if ($query) {
-        header('Location: index.php');
+        header('Location: enviado.php');
         }
         ?>
+

@@ -43,15 +43,15 @@ if (isset($_GET)) {
             $result = mysqli_num_rows($query);
             if ($result > 0) {
                 while ($data = mysqli_fetch_assoc($query)) { ?>
-<br><br><br>  
+<br><br>
 <div class="container" style="">
-<h1 class="text-center">FORMULARIO DE ENTREGAS</h1>
+<h1 class="text-center fw-bolder">FORMULARIO DE ENTREGAS</h1>
 <form action="enviar.php" method="POST" enctype="multipart/form-data" autocomplete="off">
 <div class="mb-3">
 </div>
 <div class="mb-3 row">
 <div class="col-6">
-<label for="basic-url" class="form-label fw-bolder">Datos del Producto</label>
+<h5 for="basic-url" class="form-label fw-bolder">Datos del Producto</h5>
 <div class="row">
     <div class="col 6">
     <label for="basic-url" class="form-label">Producto</label>
@@ -59,21 +59,36 @@ if (isset($_GET)) {
     <input type="text" readonly class="form-control-plaintext" name="producto" value="<?php echo $data['nombre'] ?>">
 </div>
 
-    <div class="col 6">
+    <div class="col 3">
     <label for="basic-url" class="form-label">#CodigoProducto</label>
     <!-- <input  class="form-control" id="floatingInputValue" name="id" placeholder="" value="<?php echo $data['id'] ?>"> -->
-    <input type="text" readonly class="form-control-plaintext" name="id" value="<?php echo $data['id'] ?>">
+    <input type="text" readonly class="form-control-plaintext text-center" name="id" value="<?php echo $data['id'] ?>">
     </div>
+    <div class="col 3">
+    <label for="basic-url" class="form-label ">Precio</label>
+    <input creadonly class="form-control-plaintext " type="text" id="numero2" name="cantidad" value="<?php echo $data['precio_rebajado'] ?> "oninput="cal()">
+    </div><hr>
 </div>
 <div class="row">
     <div class="col 6">
     <label for="basic-url" class="form-label">Cantidad</label>
-<input class="form-control" type="number" id="floatingInputValue" name="cantidad" value="" placeholder="1-<?php echo $data['cantidad'] ?>">
+<input class="form-control" type="number" id="numero" name="cantidad" placeholder="1-<?php echo $data['cantidad'] ?> "oninput="cal()" required>
 </div>
-    <div class="col 6">
-    <label for="basic-url" class="form-label">Precio</label>
-    <input  class="form-control" id="floatingInputValue" name="cantidad" placeholder='<?php echo $data['precio_rebajado'] ?>' value="">
+
+    <div class="col 6 text-center">
+    <label for="basic-url" class="form-label ">Total</label>
+    <input readonly class="form-control-plaintext text-center" id="nuevoSaldo" placeholder="" />
     </div>
+<script type="text/javascript">
+function cal() {
+  try {
+    var a = parseInt(document.getElementById("numero").value) || 0,
+      b = parseInt(document.getElementById("numero2").value) || 0;
+
+    document.getElementById("nuevoSaldo").value = a * b;
+  } catch (e) {}
+}
+</script>
 </div>
 <label for="basic-url" class="form-label">Color</label>
 <input  class="form-control" id="floatingInputValue" name="color" placeholder="Solo si hay colores disponibles">
@@ -82,17 +97,18 @@ if (isset($_GET)) {
   <img id="imgen" class="d-block w-50" src="assets/img/<?php echo $data['imagen']; ?>" />
 </div>
 </div>
-<label for="basic-url" class="form-label fw-bolder">Datos del cliente</label>
+<hr>
+<h5 for="basic-url" class="form-label fw-bolder">Datos del cliente</h5>
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
-  <input  class="form-control" name="nombre" id="exampleFormControlInput1" placeholder="">
+  <input  class="form-control" name="nombre" id="exampleFormControlInput1" placeholder="" required>
 </div>
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">WhatsApp / telefono</label>
-  <input  class="form-control" name="telefono" id="exampleFormControlInput1" placeholder="">
+  <input  class="form-control" name="telefono" id="exampleFormControlInput1" placeholder="" required>
 </div>
 <div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Direccion</label>
+  <label for="exampleFormControlTextarea1" class="form-label" required>Direccion</label>
   <textarea class="form-control" name="direccion" id="exampleFormControlTextarea1" rows="3"></textarea>
 </div>
 <div class="col-auto">
