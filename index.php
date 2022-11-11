@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 <body>
+<a href="#" class="btn-flotante" id="btnCarrito">Carrito <span class="badge bg-success" id="carrito">0</span></a>
 <div >
     <nav id="navar" class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
@@ -117,6 +118,9 @@
                                         <span class="text-muted text-decoration-line-through"><?php echo $data['precio_normal'] ?>Bs</span>
                                         <?php echo $data['precio_rebajado'] ?>Bs
                                     </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar" data-id="<?php echo $data['id']; ?>" href="#">Agregar</a></div>
+                                </div>
                                 </div>
                             </div>
                         </div>

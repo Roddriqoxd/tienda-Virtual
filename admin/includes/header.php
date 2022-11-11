@@ -6,7 +6,7 @@ if (empty($_SESSION['id'])) {
 <html lang="en">
 
 <head>
-
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -72,11 +72,16 @@ if (empty($_SESSION['id'])) {
                     <i class="fas fa-user-cog"></i>
                     <span>Solicitudes</span></a>
             </li>
-            
+            <hr class="sidebar-divider d-none d-md-block">
             <li class="nav-item">
                 <a class="nav-link" href="reportes.php">
-                    <i class="fas fa-user-cog"></i>
-                    <span>Reportes</span></a>
+                    <i class="fa fa-hashtag"></i>
+                    <span>Reportes de ventas</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="lista_pro.php">
+                    <i class="fa fa-hashtag"></i>
+                    <span>productos por agotarse</span></a>
             </li>
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

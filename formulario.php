@@ -76,8 +76,8 @@ if (isset($_GET)) {
 </div>
 
     <div class="col 6 text-center">
-    <label for="basic-url" class="form-label ">Total</label>
-    <input readonly class="form-control-plaintext text-center" id="nuevoSaldo" placeholder="" />
+    <label for="basic-url" class="form-label ">Total a pagar Bs.</label>
+    <input readonly class="form-control-plaintext text-center" name="total" id="nuevoSaldo" placeholder="" />
     </div>
 <script type="text/javascript">
 function cal() {
