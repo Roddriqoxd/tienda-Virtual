@@ -136,7 +136,7 @@ if (isset($_POST)) {
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="p_normal">Precio Normal</label>
-                                <input id="p_normal" class="form-control" type="text" name="p_normal" placeholder="Precio Normal" required>
+                                <input id="p_normal" class="form-control" type="text" name="p_normal" placeholder="Precio Normal">
                             </div>
                         </div>
                         <div class="col-md-6">

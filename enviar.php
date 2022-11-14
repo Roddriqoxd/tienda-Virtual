@@ -4,13 +4,10 @@ require_once "config/conexion.php";
         $nombre = $_POST['nombre'];
         $telefono = $_POST['telefono'];
         $direccion = $_POST['direccion'];
-        $color = $_POST['color'];
+        $apellido = $_POST['apellido'];
         $cantidad = $_POST['cantidad'];
-        $id = $_POST['id'];
         $total =$_POST['total'];
-
-        // $estado =$_POST['estado'];
-        $query = mysqli_query($conexion, "INSERT INTO formulario(producto, nombre, telefono, direccion,color,cantidad,id_producto,estado,total,fecha) VALUES ('$producto','$nombre','$telefono','$direccion','$color','$cantidad',$id,'1',$total,now())");
+        $query = mysqli_query($conexion, "INSERT INTO pedidos(producto, nombre, telefono, direccion,apellido,cantidad,estado,total,fecha) VALUES ('$producto','$nombre','$telefono','$direccion','$apellido','$cantidad','pendiente',$total,now())");
         if ($query) {
         header('Location: enviado.php');
         }

@@ -1,4 +1,5 @@
 <?php require_once "config/conexion.php"; ?>
+<?php include("cabeza.php");?>
 <?php
 if (isset($_GET)) {
     if (!empty($_GET['accion']) && !empty($_GET['id'])) {
@@ -10,37 +11,6 @@ if (isset($_GET)) {
         }
     }
 ?>
-<!DOCTYPE html>
-<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-
-    <title>Toji online store</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.png"/>
-    <!-- Bootstrap icons-->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" /> -->
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="assets/css/styles.css" rel="stylesheet" />
-    <link href="assets/css/estilos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-</head>
-<body>
-<div class="bg-dark">
-    <nav id="navar" class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <img src="assets/img/logo.png" alt="" width="30" height="30">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav " >
-                    <a href="index.php" class="nav-link" style="color: white;">TOJI ONLINE STORE</a>
-                    </ul>
-                </div>
-            </div>
-    </nav>
-</div>
 <!-- div -->
 <!-- tituloo -->
 <div>
@@ -66,7 +36,7 @@ if (isset($_GET)) {
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="assets/img/<?php echo $data['imagen']; ?>" alt="..." />
+                        <img class="d-block w-100" src="assets/img/<?php echo $data['imagen']; ?>" alt="..."/>
                     </div>
                     <div class="carousel-item">
                         <img class="cd-block w-100" src="assets/img/<?php echo $data['imagen2']; ?>" alt="..." />
@@ -88,12 +58,17 @@ if (isset($_GET)) {
         <div class="col-2">
             <h5 class="fw-bolder text-center">Precio</h5>
             <div class="container" style="background-color: #adff2f;"><h3 class="text-center"><?php echo $data['precio_rebajado'] ?>Bs</h3></div>
-            <h5 class="fw-bolder text-center">Cantidad</h5>
+            <h5 class="fw-bolder text-center">Disponible</h5>
             <h5 class="text-center"><?php echo $data['cantidad'] ?> Unidades</h5>
                             <div style="text-align: center;">
             <form method="post" action="formulario.php?accion=form&id=<?php echo $data['id']; ?>">
-                <button class="btn btn-outline-dark" type="submit">Comprar</button>
+                <button class="btn btn-success" type="submit" style='width:100%; height:100%'>Comprar</button>
                         </form>
+                        </div><hr>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar" data-id="<?php echo $data['id']; ?>" href="#">Agregar</a></div>
+                                </div>
+                <!-- <button class="btn btn-outline-dark" type="button" ">Agregar al carrito</button> -->
                             </div>
             </div>
         </div>
