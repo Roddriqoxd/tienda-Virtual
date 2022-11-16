@@ -13,42 +13,32 @@ include("includes/header.php");
                     <tr>
                         
                         <th>Nombre</th>
+                        <th>Apellido</th>
                         <th>Telefono</th>
                         <th>Direccion</th>
-                        <th>Color</th>
                         <th>Cantidad</th>
+                        <th>total</th>
                         <th>Producto</th>
-                        <th>Estado</th>
-                        <th>Accion</th>
+                        <th>Status</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $query = mysqli_query($conexion, "SELECT * FROM formulario ORDER BY id DESC");
+                    $query = mysqli_query($conexion, "SELECT * FROM pedidos ORDER BY id DESC");
                     
                     while ($data = mysqli_fetch_assoc($query)) { ?>
                         <tr>
                             <td><?php echo $data['nombre']; ?></td>
+                            <td><?php echo $data['apellido']; ?></td>
                             <td><?php echo $data['telefono']; ?></td>
                             <td><?php echo $data['direccion']; ?></td>
-                            <td><?php echo $data['color']; ?></td>
                             <td><?php echo $data['cantidad']; ?></td>
-                            <td><?php echo $data['id_producto']; ?></td>
+                            <td><?php echo $data['total']; ?></td>
+                            <td><?php echo $data['producto']; ?></td>
+                            <td><?php echo $data['estado']; ?></td>
                             <td>
-                                <?php
-switch ($data['estado']) {
-    case '1':
-        echo "Pendiente";
-        break;
-        case '2':
-            echo "Entregado";
-            break;
-            case '3':
-                echo "Rechazado";
-                break;
-    }?></td>
-                            <td>
-                                <form method="post" action="cambiar.php?accion=vender&id=<?php echo $data['id_producto']; ?>&id2=<?php echo $data['id']; ?>&id3=<?php echo $data['cantidad']; ?>" class="d-inline">
+                                <form method="post" action="cambiar.php?accion=vender&id=<?php echo $data['cantidad']; ?>&id2=<?php echo $data['id']; ?>&id3=<?php echo $data['cantidad']; ?>" class="d-inline">
                                     <button class="btn btn-success" type="submit">✓</button>
                                 </form>
                                 <form method="post" action="eliminar.php?accion=vender&id=<?php echo $data['id']; ?>" class="d-inline">

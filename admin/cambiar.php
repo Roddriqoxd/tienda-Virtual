@@ -6,8 +6,8 @@ if (isset($_GET)) {
         $id2 = $_GET['id2'];
         $id3 = $_GET['id3'];
         if ($_GET['accion'] == 'vender') {
-            $query = mysqli_query($conexion, "UPDATE productos SET cantidad = cantidad - $id3 WHERE id = $id ");
-            $query = mysqli_query($conexion, "UPDATE formulario SET estado = '2' WHERE id = $id2");
+            // $query = mysqli_query($conexion, "UPDATE productos SET cantidad = cantidad - $id3 WHERE id = $id ");
+            $query = mysqli_query($conexion, "UPDATE pedidos SET estado = 'vendido' WHERE id = $id2");
             if ($query) {
                 header('Location: solicitudes.php');
             }

@@ -48,7 +48,7 @@ if(isset($_GET['enviar'])){
                 <?php
 
 $conexion=mysqli_connect("localhost","root","1234","toji");               
-$SQL="SELECT * FROM formulario where estado ='2' $where";
+$SQL="SELECT * FROM pedidos where estado ='vendido' $where";
 $dato = mysqli_query($conexion, $SQL);
 
 if($dato -> num_rows >0){
@@ -56,10 +56,10 @@ if($dato -> num_rows >0){
 
                 ?>
                         <tr>
-                            <td><?php echo $data['producto']; ?></td>
+                            <!-- <td><?php echo $row['producto']; ?></td>
                             <td><?php echo $data['cantidad']; ?></td>
                             <td><?php echo $data['fecha']; ?></td>
-                            <td><?php echo $data['total']; ?></td>
+                            <td><?php echo $data['total']; ?></td> -->
                         </tr>
                         <?php
 }
@@ -78,7 +78,7 @@ if($dato -> num_rows >0){
 ?>
                         <hr>
                         <?php
-                    $query2 = mysqli_query($conexion, "SELECT SUM(total) FROM formulario where estado ='2' ");
+                    $query2 = mysqli_query($conexion, "SELECT SUM(total) FROM pedidos where estado ='vendido' ");
                     while ($data2 = mysqli_fetch_assoc($query2)) { ?>
                         <td>Total de ventas: </td>
                         <td></td>
