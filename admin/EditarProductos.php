@@ -1,18 +1,22 @@
 <?php
 require_once "../config/conexion.php";
 if (isset($_POST)) {
-    if (!empty($_POST)) {
+    
         $id = $_POST['id'];
-        $usuario = $_POST['usuario'];
         $nombre = $_POST['nombre'];
-        $clave = $_POST['clave'];
-        $query = mysqli_query($conexion, "UPDATE productos SET nombre = '$nombre', usuario= '$usuario' , clave='$clave' where id = '$id'");
+        $cantidad = $_POST['cantidad'];
+        $descripcion = $_POST['descripcion'];
+        $p_normal = $_POST['p_normal'];
+        $p_rebajado = $_POST['p_rebajado'];
+        $categoria = $_POST['categoria'];
+        $query = mysqli_query($conexion, "UPDATE productos SET nombre = '$nombre', cantidad= '$cantidad' , descripcion='$descripcion' , p_normal='$p_normal' , p_rebajado='$p_rebajado' , categoria='$categoria' where id = '$id'");
         if ($query) {
             header('Location: productos.php');
         }
     }
-}
 ?>
+
+
 <?php
 if (isset($_GET)) {
     if (!empty($_GET['accion']) && !empty($_GET['id'])) {
@@ -29,9 +33,9 @@ if (isset($_GET)) {
             $result = mysqli_num_rows($query);
             if ($result > 0) {
                 while ($data = mysqli_fetch_assoc($query)) { ?>
-                <form action="" method="POST" enctype="multipart/form-data" autocomplete="off">
+            <form action="" method="POST" autocomplete="off">
                 <label for="nombre">id</label>
-                        <input type="text" readonly class="form-control-plaintext" name="id" value="<?php echo $data['id']; ?>">
+                    <input type="text" readonly class="form-control-plaintext" name="id" value="<?php echo $data['id']; ?>">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -48,7 +52,7 @@ if (isset($_GET)) {
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="descripcion">Descripción</label>
-                                <textarea id="descripcion" class="form-control" name="descripcion" value="<?php echo $data['descripcion']; ?>" required></textarea>
+                                <input id="descripcion" class="form-control" name="descripcion" value="<?php echo $data['descripcion']; ?>" required>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -70,38 +74,14 @@ if (isset($_GET)) {
                                     <?php
                                     $categorias = mysqli_query($conexion, "SELECT * FROM categorias");
                                     foreach ($categorias as $cat) { ?>
-                                        <option value="<?php echo $cat['id']; ?>"><?php echo $cat['categoria']; ?></option>
+                                    <option value="<?php echo $cat['id']; ?>"><?php echo $cat['categoria']; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="imagen">Foto</label>
-                                <input type="file" class="form-control" name="foto" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="imagen2">Foto2</label>
-                                <input type="file" class="form-control" name="foto2" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="imagen3">Foto3</label>
-                                <input type="file" class="form-control" name="foto3" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="imagen4">Foto4</label>
-                                <input type="file" class="form-control" name="foto4" required>
-                            </div>
-                        </div>
                     </div>
-                    <button class="btn btn-primary" type="submit">Registrar</button>
-                </form>
+                <button class="btn btn-primary" type="submit">Registrar</button>
+            </form>
                 <?php  }
                 } ?>
 <?php include("includes/footer.php"); ?>

@@ -4,7 +4,6 @@ if (empty($_SESSION['id'])) {
 } ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     
     <meta charset="utf-8">
@@ -71,13 +70,31 @@ if (empty($_SESSION['id'])) {
                 <a class="nav-link" href="solicitudes.php">
                     <i class="fas fa-user-cog"></i>
                     <span>Solicitudes</span></a>
+                    <!-- <div class="container ">
+                    <select class="bg-dark form-select" >
+                    <option selected>Reportes</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    </select>
+                    </div> -->
             </li>
             <hr class="sidebar-divider d-none d-md-block">
             <li class="nav-item">
-                <a class="nav-link" href="reportes.php">
-                    <i class="fa fa-hashtag"></i>
-                    <span>Reportes de ventas</span></a>
+                <a class="nav-link" href="solicitud.php">
+                    <!-- <i class="fa fa-hashtag"></i> -->
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Reporte por producto</span></a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="solicitud2.php">
+                    <!-- <i class="fa fa-hashtag"></i> -->
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Reportes por fecha </span></a>
+            </li>
+
+
             <li class="nav-item">
                 <a class="nav-link" href="lista_pro.php">
                     <i class="fa fa-hashtag"></i>

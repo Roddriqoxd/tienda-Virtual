@@ -61,13 +61,13 @@ if (isset($_GET)) {
             <h5 class="fw-bolder text-center">Disponible</h5>
             <h5 class="text-center"><?php echo $data['cantidad'] ?> Unidades</h5>
                             <div style="text-align: center;">
-            <form method="post" action="formulario.php?accion=form&id=<?php echo $data['id']; ?>">
-                <button class="btn btn-success" type="submit" style='width:100%; height:100%'>Comprar</button>
-                        </form>
-                        </div><hr>
+                            <form method="Post" action="añadir.php?accion=cli&id=<?php echo $data['id']; ?>&nombre=<?php echo $data['nombre']; ?>&precio=<?php echo $data['precio_rebajado']; ?>" class="btn">
+                                    <button class="btn btn-warning text-center" type="submit">Añadir al carrito</button>
+                                </form>
+                        <!-- </div><hr>
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                     <div class="text-center"><a class="btn btn-outline-dark mt-auto agregar" data-id="<?php echo $data['id']; ?>" href="#">Agregar</a></div>
-                                </div>
+                                </div> -->
                 <!-- <button class="btn btn-outline-dark" type="button" ">Agregar al carrito</button> -->
                             </div>
             </div>

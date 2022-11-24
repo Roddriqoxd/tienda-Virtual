@@ -70,7 +70,8 @@ if (isset($_POST)) {
                         <th>Precio Rebajado</th>
                         <th>Cantidad</th>
                         <th>Categoria</th>
-                        <th>Accion</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -90,10 +91,11 @@ if (isset($_POST)) {
                             <td><?php echo $data['categoria']; ?></td>
                             <td>
                                 <form method="post" action="eliminar.php?accion=pro&id=<?php echo $data['id']; ?>" class="d-inline eliminar">
-                                    <button class="btn btn-danger" type="submit">Eliminar</button>
+                                    <button class="btn btn-danger" type="submit"><i class='fas fa-ban'></i></button>
                                 </form>
+                    </td><td>
                                 <form method="Post" action="editarProductos.php?accion=cli&id=<?php echo $data['id']; ?>" class="d-inline">
-                                    <button class="btn btn-success" type="submit">Editar</button>
+                                    <button class="btn btn-success" type="submit"><i class='fas fa-file-signature'></i></button>
                                 </form>
                             </td>
                         </tr>

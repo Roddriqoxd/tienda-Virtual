@@ -45,14 +45,13 @@ require_once "config/config.php";
     </div>
     <!-- formulario -->
     <div class="container">
-    <form action="enviar.php" method="POST" enctype="multipart/form-data" autocomplete="off">
-
+    <form action="enviar.php" method="POST" class="form">
 
 <h5 for="basic-url" class="form-label fw-bolder">Datos del cliente</h5>
 <div class="row"><hr>
     <div class="col-6">
     <label for="basic-url" class="form-label">Producto</label>
-    <textarea type="text" readonly name="producto" class="form-control-plaintext" id="prueba" ></textarea>
+    <textarea type="text" readonly  name="producto" class="form-control-plaintext" id="prueba" ></textarea>
     </div>
     <div class="col-3 text-center">
     <label for="basic-url" class="form-label">Total</label>
