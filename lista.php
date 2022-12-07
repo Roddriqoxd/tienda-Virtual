@@ -13,7 +13,7 @@
   <tbody>
   <?php
                     $query = mysqli_query($conexion, "SELECT * FROM detalle Where estado ='pendiente'");
-                    while ($data = mysqli_fetch_assoc($query)) { ?>
+                    while ($data = mysqli_fetch_assoc($query)) {?>
                         <tr>
                             <td><?php echo $data['id_producto']; ?></td>
                             <td><?php echo $data['producto']; ?></td>

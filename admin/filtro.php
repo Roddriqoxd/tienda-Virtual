@@ -17,7 +17,7 @@ $total = mysqli_num_rows($query);
 <?php echo $fechaInit; ?>     a      <?php echo $fechaFin; ?></h2><br>
 <!-- <h2 class="h3 mb-0 text-gray-800">Reportes filtrados de <?php echo $fechaInit; ?>     a      <?php echo $fechaFin; ?></h2><br> -->
         <form method="Post" action="impri.php?f_ingreso=<?php echo $fechaInit ?>&f_fin=<?php echo $fechaFin ?>&producto=<?php echo $producto ?>">
-            <button class="btn btn-danger" type="submit">IMPRIMIR</button>
+            <button class="btn btn-danger" type="submit">IMPRIMIR REPORTE EN PDF</button>
         </form>
 <?php echo '<strong>Total: </strong> ('. $total .')';?>
 <table class="table table-hover">

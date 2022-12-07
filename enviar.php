@@ -6,7 +6,7 @@ require_once "config/conexion.php";
         $direccion = $_POST['direccion'];
         $apellido = $_POST['apellido'];
         $total =$_POST['total'];
-
+        $productos = " ";
 
 
         $query = mysqli_query($conexion, "INSERT INTO pedidos( nombre, telefono, direccion,apellido,total,fecha) VALUES ('$nombre','$telefono','$direccion','$apellido',$total,now())");
@@ -17,6 +17,10 @@ require_once "config/conexion.php";
                         }
                 }
 
+                // $query = mysqli_query($conexion, "SELECT * FROM detalle WHERE id_cliente ='$telefono'");
+                // while ($data = mysqli_fetch_assoc($query)) { 
+                //         echo $data['producto'];
+                // }
         ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,15 +34,21 @@ require_once "config/conexion.php";
 
 <script type="text/javascript">
 
-        const telefono = "59162606558";
+        const telefono = "59169490709";
         const url = `https://api.whatsapp.com/send?phone=${telefono}&text=
           *_¡Hola!_ _TOJI_*%0A
-          *Quisiera coordinar la siguiente de mi producto:*%0A%0A
+          *Quisiera coordinar la siguiente del producto:*%0A
+        <?php 
+          $query = mysqli_query($conexion, "SELECT * FROM detalle WHERE id_cliente ='$telefono'");
+        while ($data = mysqli_fetch_assoc($query)) { 
+                echo '-',$data['producto'],'%0A';
+        }?>
+        %0A
           *Mi nombre es:* <?php echo $nombre; ?>  <?php echo $apellido; ?> %0A
           *Mi direccion es:* <?php echo $direccion; ?>%0A
-          %0A
-          Telefono de referencia: <?php echo $telefono; ?>%0A
-          Cantidad a pagar: <?php echo $total; ?> %0A`;
+        %0A
+        Telefono de referencia: <?php echo $telefono; ?>%0A
+        Cantidad a pagar: <?php echo $total; ?> bs. %0A`;
 
           window.open(url);
 </script> 

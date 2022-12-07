@@ -52,7 +52,7 @@ include("includes/header.php");
                     <?php break;} ?>
                             </td>
                             <td>
-                            <form method="POST" action="elimi.php?accion=update&telefono=<?= $data['telefono']?>&pedido=<?= $data2['id_producto']?>" class="d-inline">
+                            <form method="POST" action="elimi.php?accion=update&telefono=<?= $data['telefono']?>&pedido=<?= $data2['id_producto']?>&cantidad=<?= $data2['cantidad']?>" class="d-inline">
                                     <button class="btn btn-success" type="submit">✔</button>
                                     <!-- <td><?php echo $data['telefono']; ?></td> -->
                                 </form>

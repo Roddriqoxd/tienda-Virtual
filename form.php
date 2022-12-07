@@ -34,7 +34,7 @@
         <br>
             <div class="col 12 text-center">
                 <label for="basic-url" class="form-label ">Total a pagar Bs.</label>
-                <input  class="form-control" name="total" id="total" placeholder="" readonly value="
+                <input class="form-control text-center" name="total" id="total" placeholder="" readonly value="
                 <?php
                       $query2 = mysqli_query($conexion, "SELECT SUM(precio) FROM detalle where estado ='pendiente'");
                       while ($data2 = mysqli_fetch_assoc($query2)) { 
@@ -59,7 +59,7 @@
 </div>
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label" required>Direccion</label>
-  <textarea class="form-control" name="direccion" id="direccion" rows="3"></textarea>
+  <textarea class="form-control" name="direccion" id="direccion" placeholder="Calle porvenir entre Granado #521 Sacaba" rows="3"></textarea>
 </div>     
 <button class=" btn btn-success">Enviar </button>
 </div>

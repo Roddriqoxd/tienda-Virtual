@@ -6,10 +6,19 @@ if (isset($_GET)) {
         $nombre = $_GET['nombre'];
         $precio = $_GET['precio'];
         if ($_GET['accion'] == 'cli') {
-            $query = mysqli_query($conexion, "INSERT INTO detalle (`producto`, `id_producto`, `estado`, cantidad, `precio`) VALUES ('$nombre','$id','pendiente','1','$precio')");
-            if ($query) {
+            $validar = "SELECT * FROM detalle WHERE id_producto = '$id' AND estado = 'pendiente'";
+            $validado=($conexion ->query($validar));
+            if(mysqli_num_rows($validado)>0){
+                $sumar = mysqli_query($conexion , "UPDATE detalle SET cantidad = cantidad + '1' , precio = $precio * cantidad WHERE id_producto = '$id' AND estado = 'pendiente'");
                 header('Location: index.php');
-            }
+            }else{
+                $query = "INSERT INTO detalle (`producto`, `id_producto`, `estado`, cantidad, `precio`) VALUES ('$nombre','$id','pendiente','1','$precio')";
+                $enviar = ($conexion->query($query));
+                header('Location: index.php');
+            }           
+            // if ($query||$sumar) {
+            //     header('Location: index.php');
+            // }
         }
     }
 }
